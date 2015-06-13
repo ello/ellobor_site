@@ -15,7 +15,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: ello_bor_development
+  database: ellobor_development
   pool: 5
   username: Admin
   password:
@@ -27,7 +27,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: ello_bor_test
+  database: ellobor_test
   pool: 5
   username: Admin
   password:
@@ -36,7 +36,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: ello_bor_production
+  database: ellobor_production
   pool: 5
   username: 
   password: 
