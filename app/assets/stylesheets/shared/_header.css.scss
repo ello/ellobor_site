@@ -2,14 +2,15 @@
 
 header.top {
   margin: 0 auto;
+  padding: 4.25rem 0 4.25rem 0;
   width: 100%;
   max-width: $layoutWidth_px;
 
   h1 {
-    margin-right: $smallColumn_px / 2;
+    margin-right: $smallColumn_px;
     width: 60px;
     height: 60px;
-    // float: left;
+    float: left;
     a {
       span {
         &.icon {
@@ -34,11 +35,13 @@ header.top {
     }
   }
 
-  // h2 {
-  //   margin-top: 1.25rem;
-  //   font-family: $bodyNormal;
-  //   font-weight: 400;
-  //   float: left;
-  // }
+  h2 {
+    padding-top: 1rem;
+    margin-bottom: 0;
+    font-family: $titleBold;
+    font-size: $bigText;
+    line-height: $bigTextLine;
+    font-weight: 700;
+  }
 
 }
