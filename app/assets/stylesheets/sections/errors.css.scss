@@ -2,4 +2,16 @@
 
 body.errors {
   background-color: $grey1;
+
+  .intro {
+    padding-left: 60px + $smallColumn_px;
+
+    a {
+      text-decoration: underline;
+
+      &:active {
+        @include transition_color(0);
+      }
+    }
+  }
 }
