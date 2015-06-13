@@ -1,116 +1,195 @@
-// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ typography defaults
+@font-face {
+  font-family: "AtlasTypewriterRegular";
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  src: asset-url("fonts/AtlasTypewriter-Regular-Web.eot");
+  src: asset-url("fonts/AtlasTypewriter-Regular-Web.eot?#iefix") format("embedded-opentype"), asset-url("fonts/AtlasTypewriter-Regular-Web.woff") format("woff"), asset-url("fonts/AtlasTypewriter-Regular-Web.ttf") format("truetype"), asset-url("fonts/AtlasTypewriter-Regular-Web.svg#AtlasTypewriterRegular") format("svg");
+}
+@font-face {
+  font-family: "AtlasTypewriterRegularItalic";
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  src: asset-url("fonts/AtlasTypewriter-RegularItalic-Web.eot");
+  src: asset-url("fonts/AtlasTypewriter-RegularItalic-Web.eot?#iefix") format("embedded-opentype"), asset-url("fonts/AtlasTypewriter-RegularItalic-Web.woff") format("woff"), asset-url("fonts//AtlasTypewriter-RegularItalic.ttf") format("truetype"), asset-url("fonts/AtlasTypewriter-RegularItalic-Web.svg#AtlasTypewriterRegularItalic") format("svg");
+}
+@font-face {
+  font-family: "AtlasTypewriterMedium";
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  src: asset-url("fonts/AtlasTypewriter-Medium-Web.eot");
+  src: asset-url("fonts/AtlasTypewriter-Medium-Web.eot?#iefix") format("embedded-opentype"), asset-url("fonts/AtlasTypewriter-Medium-Web.woff") format("woff"), asset-url("fonts/AtlasTypewriter-Medium-Web.ttf") format("truetype"), asset-url("fonts/AtlasTypewriter-Medium-Web.svg#AtlasTypewriterMedium") format("svg");
+}
+@font-face {
+  font-family: "AtlasTypewriterMediumItalic";
+  font-weight: 500;
+  font-style: italic;
+  font-stretch: normal;
+  src: asset-url("fonts/AtlasTypewriter-MediumItalic-Web.eot");
+  src: asset-url("fonts/AtlasTypewriter-MediumItalic-Web.eot?#iefix") format("embedded-opentype"), asset-url("fonts/AtlasTypewriter-MediumItalic-Web.woff") format("woff"), asset-url("fonts/AtlasTypewriter-MediumItalic-Web.ttf") format("truetype"), asset-url("fonts/AtlasTypewriter-MediumItalic-Web.svg#AtlasTypewriterMediumItalic") format("svg");
+}
+@font-face {
+  font-family: "AtlasGroteskBold";
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  src: asset-url("fonts/AtlasGrotesk-Bold-Web.eot");
+  src: asset-url("fonts/AtlasGrotesk-Bold-Web.eot?#iefix") format("embedded-opentype"), asset-url("fonts/AtlasGrotesk-Bold-Web.woff") format("woff"), asset-url("fonts/AtlasGrotesk-Bold-Web.ttf") format("truetype"), asset-url("fonts/AtlasGrotesk-Bold-Web.svg#AtlasGroteskBold") format("svg");
+}
 
-$title: "futura-pt", Helvetica, Arial, sans-serif; /* weights: 700, 800 */
-$sans: "proxima-nova", Verdana, sans-serif; /* weights: 400, 700, 900 */ 
+$bodyNormal:  "AtlasTypewriterRegular", "Andale Mono", "Consolas", "Lucida Console", "Menlo", "Luxi Mono", monospace;       // weight 400
+$bodyItalic:  "AtlasTypewriterRegularItalic", "Andale Mono", "Consolas", "Lucida Console", "Menlo", "Luxi Mono", monospace; // weight 400
+$titleNormal: "AtlasTypewriterMedium", "Andale Mono", "Consolas", "Lucida Console", "Menlo", "Luxi Mono", monospace;        // weight 500
+$titleItalic: "AtlasTypewriterMediumItalic", "Andale Mono", "Consolas", "Lucida Console", "Menlo", "Luxi Mono", monospace;  // weight 500
+$titleBold:   "AtlasGroteskBold", "Helvetica Neue", "HelveticaNeue", "Helvetica", "Arial", sans-serif;                      // weight 700
+
 
 /* Typography Bible -------------------
 
-* Proxima Nova Regular (400)
-* Proxima Nova Regular Italic (400)
-* Proxima Nova Bold (700)
-* Proxima Nova Bold Italic (700)
-* Proxima Nova Black (900)
-* Futura PT Bold (700)
-* Futura PT Extra Bold (800)
+* Atlas Typewriter Regular (400)
+* Atlas Typewriter Regular Italic (400)
+* Atlas Typewriter Medium (500)
+* Atlas Typewriter Medium Italic (500)
+* Atlas Grotesk Bold (700)
+
+Atlas Typewriter Regular & Bold 12pt
+Atlas Grotesk Regular & Bold 24pt
+Atlas Grotesk Bold 18pt (sub-heading within posts)
 
 ------------------- */
 
-a {
+html {
+  font: normal 400 100%/1.5 $bodyNormal;
+  @include text_size_adjust(1);
+}
+
+body {
   color: $black;
-  text-decoration: underline;
-
-  &.disabled {
-    cursor: default;
-  }
-}
-a:hover {
-  text-decoration: none;
-
-  &.disabled {
-    text-decoration: none;
-  }
-}
-a:active {
-  color: $darkGrey;
-
-  &.disabled {
-    color: $black;
-  }
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $title;
-  font-weight: 900;
-  
-  em, i {
-    font-style: italic;
-  }
-}
-
-h1, h2 {
-  margin-bottom: 102px;
-  font-size: 92px;
-  line-height: 102px;
-  color: $black;
-}
-h2 {
-  margin-bottom: 58px;
-  font-size: 56px;
-  line-height: 58px;
-  text-transform: uppercase;
-}
-
-h3, h4 {
-  margin-bottom: 52px;
-  font-size: 44px;
-  line-height: 52px;
-}
-h3 { color: $black; }
-h4 { color: $black; }
-
-h4 em {
-  display: block;
-  color: $black;
-}
-h4 a { color: $black; }
-
-h5 {
-  margin-bottom: 38px;
-  font-size: 34px;
-  line-height: 38px;
-}
-h6 {
-  margin-bottom: 38px;
-  font-size: 32px;
-  line-height: 38px;
-}
-
-p, ul, ol {
-  margin-bottom: 18px;
-  font-size: 14px;
-  line-height: 18px;
-  color: $black;
-}
-
-p {
-  font-family: $sans;
-}
-
-b {
-  font-weight: bold;
-}
-
-i {
-  font-style: italic;
 }
 
 ::selection {
   color: $white;
-	background: $darkGrey; /* Webkit */
-	}
+  background: $black; // Webkit
+  text-shadow: none;
+  }
 ::-moz-selection {
   color: $white;
-	background: $darkGrey; /* Firefox */
+  background: $black; // Firefox
+  text-shadow: none;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+  @include transition_color(150ms);
+
+  &:hover,
+  &:active {
+    outline: none;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $titleNormal;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+p {
+  margin: 0.9375rem 0;
+
+  a {
+    &:active {
+      color: $grey3;
+    }
+  }
+}
+p, ol, ul, dl {
+  font-size: 0.75rem;
+}
+p:empty {
+  display: none;
+}
+ol, ul, dl, dd {
+  margin: 0;
+}
+ol, ul {
+  padding: 0;
+}
+ol {
+  margin-left: 2.2em;
+}
+ul {
+  margin-left: 1.2em;
+}
+nav ul, nav ol {
+  margin-left: 0;
+  list-style: none;
+}
+
+em, i {
+  font-family: $bodyItalic;
+  font-style: italic;
+  font-weight: 400;
+}
+
+strong, b {
+  font-family: $titleNormal;
+  font-style: normal;
+  font-weight: 500;
+}
+
+strong em, em strong, b i, i b, b em, em b, strong i, i strong {
+  font-family: $titleItalic;
+  font-style: italic;
+  font-weight: 500;
+}
+
+small {
+  font-size: 0.875em;
+}
+sub, sup {
+  position: relative;
+  vertical-align: baseline;
+  font-size: 0.75em;
+  line-height: 0;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+
+code, pre, blockquote {
+  font-family: inherit;
+  background-color: #f1f1f1;
+  font-size: 0.75rem;
+}
+code, blockquote {
+  display: inline-block;
+  padding: 0.375rem 0.625rem;
+}
+pre {
+  margin: 0.9375rem 0;
+  padding: 0.9375rem;
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+pre code {
+  padding: 0;
+  background-color: transparent;
+}
+blockquote {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-family: $bodyItalic;
+  font-style: italic;
 }
 
 .hide_text {
@@ -118,3 +197,10 @@ i {
   white-space: nowrap;
   overflow: hidden;
 }
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ site-wide defaults
+
+$bigText: 1.5rem;
+$bigTextLine: 2.25rem;
+$bigText_m: 1.1rem;
+$bigTextLine_m: 1.35rem;
