@@ -1,0 +1,36 @@
+:plain
+  <!DOCTYPE html>
+%html{lang: 'en'}
+  %head
+    %meta{"http-equiv" => "Content-Type", content: "text/html; charset=UTF-8"}
+
+    %meta{name: "viewport", content: "width=device-width,initial-scale = 1.0"}
+    %meta{name: "description", content: page_meta_description}
+    %meta{name: "keywords", content: page_meta_keywords}
+    %meta{name: "web_author", content: "gb Studio (grantblakeman.com)"}
+    =render partial: "layouts/fb_meta_tags"
+    = csrf_meta_tags
+
+    %title= site_title
+    
+    :plain
+      <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+
+    =stylesheet_link_tag :ellobor
+        
+    = javascript_include_tag "vendor/modernizr-2.8.3.min"
+    = javascript_include_tag :ellobor
+
+  %body{class: "#{body_class}"}
+
+    =render partial: "layouts/header"
+
+    #main_content
+      =yield
+
+    =render partial: "layouts/footer"
+
+    =render partial: "layouts/bottom_scripts"
+    =render partial: "layouts/share_scripts"
