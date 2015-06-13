@@ -39,7 +39,7 @@ body.pages {
 
   h2 {
     padding-top: 1rem;
-    margin-bottom: 0;
+    margin-bottom: $bigTextLine;
     font-family: $titleBold;
     font-size: $bigText;
     line-height: $bigTextLine;
@@ -51,6 +51,24 @@ body.pages {
 
     &.signatories {
       margin-bottom: 4.25rem;
+
+      ul {
+        width: 100%;
+        li {
+          @include margin_right_by_layout(0,1);
+          @include width_by_layout(1,0);
+          line-height: $bigTextLine;
+          float: left;
+
+          &:nth-child(3n) {
+            margin-right: 0;
+          }
+
+          a {
+            text-decoration: underline;
+          }
+        }
+      }
     }
   }
 
