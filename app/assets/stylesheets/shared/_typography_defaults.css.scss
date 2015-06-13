@@ -133,6 +133,8 @@ em, i {
 em {
   font-style: normal;
   text-transform: uppercase;
+  letter-spacing: -0.03rem;
+  font-size: 0.8rem; // not entirely sure why the size has to go up to look right in all-caps
 }
 
 strong, b {
