@@ -3,6 +3,12 @@
 body.pages {
   background-color: $white;
 
+  a {
+    &:hover {
+      color: $grey3;
+    }
+  }
+
   .intro {
     margin-bottom: 4.25rem;
   }
