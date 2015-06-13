@@ -136,6 +136,10 @@ em, i {
   font-style: italic;
   font-weight: 400;
 }
+em {
+  font-style: normal;
+  text-transform: uppercase;
+}
 
 strong, b {
   font-family: $titleNormal;

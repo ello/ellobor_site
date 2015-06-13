@@ -1,13 +1,44 @@
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ layout defaults
 
+*, *:before, *:after {
+  @include box_sizing_inset;
+}
+
+html {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 body {
-  padding: 2.5%;
-  font-family: $bodyNormal;
+  padding: $gutter_px $smallColumn_px 0 $smallColumn_px;
   background-color: $white;
 }
 
+hr {
+  display: block;
+  margin: 1em 0;
+  padding: 0;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #f1f1f1;
+
+  &.spacer {
+    width: 100%;
+    border: 0;
+    background: none;
+    clear: both;
+  }
+}
+
+svg {
+  title {
+    display: none;
+  }
+}
+
 #main_content {
-  
+  margin: 0 auto;
+  width: 100%;
+  max-width: $fullLayoutWidth_px;  
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ main layout stuff */
