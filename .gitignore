@@ -1,0 +1,49 @@
+# Ignore bundler config
+.bundle
+
+# Ignore the default SQLite database.
+db/*.sqlite3
+db/schema.rb
+
+# Ignore all logfiles and tempfiles.
+log/*.log
+log/
+.fseventsd
+*.pid
+tmp/cache/*
+tmp/uploads/cache/*
+.apdisk
+*.rbc
+*.sassc
+capybara-*.html
+.rspec
+.rvmrc
+/coverage/
+/spec/tmp/*
+**.orig
+rerun.txt
+pickle-email-*.html
+.project
+*.sublime*
+
+# Ignore Uploaded Images
+public/media/*
+
+# Ignore Production Compiled Assets
+public/assets/*
+public/images/assets/*
+
+# Ignore Production Nginx Pages
+public/system/*
+
+# Ignore application configuration
+config/secrets.yml
+config/database.yml
+
+# Ignore production stuff
+.sass-cache
+tmp/restart.txt
+vendor/bundle/*
+
+# Ignore meta_request RailsConsole stuff
+tmp/data/meta_request
