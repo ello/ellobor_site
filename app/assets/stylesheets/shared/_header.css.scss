@@ -2,4 +2,40 @@
 
 header.top {
 
+  h1 {
+    margin-right: $smallColumn_px / 2;
+    width: 60px;
+    height: 60px;
+    // float: left;
+    a {
+      span {
+        &.icon {
+          svg {
+            width: 60px;
+            @include border_radius(60px);
+
+            path {
+              &.svg__bg {
+                fill: $black;
+              }
+              &.svg__fg {
+                fill: $white;
+              }
+            }
+          }
+        }
+        &.label {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // h2 {
+  //   margin-top: 1.25rem;
+  //   font-family: $bodyNormal;
+  //   font-weight: 400;
+  //   float: left;
+  // }
+
 }
