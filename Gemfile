@@ -14,6 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'pg'
 
 ## Helpers
+gem "kaminari" # adds pagination to ActiveModels
 
 ## Engines / Services / API Helpers
 # gem "gibbon" ## for mailchimp
