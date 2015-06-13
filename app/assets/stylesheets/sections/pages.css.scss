@@ -3,5 +3,36 @@
 body.pages {
   background-color: $white;
 
-  
+  .points {
+    width: 100%;
+    li {
+      width: 100%;
+      background-color: yellow;
+      span {
+        display: inline-block;
+        &.bullet,
+        &.point {
+          // margin-bottom: 2.75rem;
+          font-family: $titleBold;
+          font-size: $bigText;
+          line-height: $bigTextLine;
+          font-weight: 700;
+          float: left;
+        }
+        &.bullet {
+          @include margin_right_by_layout(0,1);
+          @include width_by_layout(1,0);
+          background-color: rgba(purple,0.5);
+        }
+        &.point {
+          @include width_by_layout(2,1);
+          background-color: rgba(pink,0.7);
+        }
+        &.content {
+          @include padding_left_by_layout(1,1);
+        }
+      }
+    }
+  }
+
 }

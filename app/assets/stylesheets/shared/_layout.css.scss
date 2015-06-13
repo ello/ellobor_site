@@ -10,6 +10,8 @@ html {
 
 body {
   padding: $gutter_px $smallColumn_px 0 $smallColumn_px;
+  width: 100%;
+  @include box_sizing_inset;
   background-color: $white;
 }
 
@@ -38,7 +40,7 @@ svg {
 #main_content {
   margin: 0 auto;
   width: 100%;
-  max-width: $fullLayoutWidth_px;  
+  max-width: $layoutWidth_px;  
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ main layout stuff */
