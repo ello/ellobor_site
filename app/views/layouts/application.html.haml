@@ -25,7 +25,8 @@
 
   %body{class: "#{body_class}"}
 
-    =render partial: "layouts/header"
+    -unless params[:controller] == "sign"
+      =render partial: "layouts/header"
 
     #main_content
       =yield

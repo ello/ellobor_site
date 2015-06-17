@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   post   "sign/new",                         to: "sign#new",                        as: :create_signatory
+  get    "sign/validate/:token",             to: "sign#validate",                   as: :validate_signatory
 
   # error pages
   get "/404", to: "errors#not_found_404"
