@@ -332,10 +332,10 @@ $smallColumn_px:     30px;
   transition: color $speed ease-in-out;
 }
 @mixin transition_fill($speed) {
-  -webkit-transition: fill $speed ease-in-out;
-  -moz-transition: fill $speed ease-in-out;
-  -o-transition: fill $speed ease-in-out;
-  transition: fill $speed ease-in-out;
+  -webkit-transition: fill $speed ease;
+  -moz-transition: fill $speed ease;
+  -o-transition: fill $speed ease;
+  transition: fill $speed ease;
 }
 
 @mixin opacity($percentage) {

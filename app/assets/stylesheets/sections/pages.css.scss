@@ -78,6 +78,50 @@ body.sign {
       }
     }
 
+    &.share {
+      nav {
+        margin-left: -0.625rem;
+        a {
+          display: inline-block;
+          position: relative;
+          margin-top: 0.625rem;
+          margin-left: 0.625rem;
+          @include box_sizing_inset;
+
+          svg {
+            width: 3.75rem;
+            height: 3.75rem;
+            vertical-align: middle;
+            @include box_sizing_inset;
+
+            &:not(:root) {
+              overflow: hidden;
+            }
+
+            &.svg-box {
+              path {
+                &:nth-of-type(1) {
+                  @include transition_fill(150ms);
+                  fill: $black;
+
+                  &:hover {
+                    fill: $grey4;
+                  }
+                }
+                &:nth-of-type(n+2) {
+                  fill: $white;
+                }
+              }
+              polygon,
+              rect {
+                fill: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+
     &.signatories {
       margin-bottom: 4.25rem;
 
