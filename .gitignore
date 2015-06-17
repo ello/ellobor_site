@@ -37,8 +37,9 @@ public/images/assets/*
 public/system/*
 
 # Ignore application configuration
-config/secrets.yml
+# config/secrets.yml # heroku needs it
 config/database.yml
+.env
 
 # Ignore production stuff
 .sass-cache
@@ -47,3 +48,4 @@ vendor/bundle/*
 
 # Ignore meta_request RailsConsole stuff
 tmp/data/meta_request
+

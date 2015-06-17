@@ -17,6 +17,10 @@ gem 'pg'
 ## Helpers
 gem "kaminari" # adds pagination to ActiveModels
 
+## heroku
+gem "puma"
+gem "foreman"
+
 ## Engines / Services / API Helpers
 # gem "gibbon" ## for mailchimp
 gem "sidekiq" ## bg processes
