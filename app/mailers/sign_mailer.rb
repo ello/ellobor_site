@@ -1,6 +1,6 @@
 class SignMailer < ApplicationMailer
 
-  helper :sign_helper
+  helper :sign
   
   def send_verification(signatory_id)
     @signatory = Signatory.find(signatory_id)
