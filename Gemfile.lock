@@ -226,6 +226,7 @@ DEPENDENCIES
   jquery-ui-rails
   kaminari
   lockup (~> 1.3.2.1)
+  nokogiri
   pg
   pry
   rails (= 4.2.1)
