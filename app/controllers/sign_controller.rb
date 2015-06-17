@@ -1,5 +1,7 @@
 class SignController < ApplicationController
 
+  # todo - check for repeat signing - update info, resend email
+
   def sign
     if request.xhr?
       params[:signatory][:ip_address] = request.remote_ip
@@ -11,13 +13,13 @@ class SignController < ApplicationController
       end
 
       ## set/update info to cookie to reflect previous signing
-      submitter_info = {
+      signatory_info = {
         name: @signatory.name,
         email: @signatory.email,
         website: @signatory.website
       }
-      cookies[:submitter_info] = {
-        value: submitter_info.to_json,
+      cookies[:signatory_info] = {
+        value: signatory_info.to_json,
         expires: (Time.now + 90.days)  
       }
     end
