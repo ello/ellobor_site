@@ -39,6 +39,10 @@ form {
     &.note {
       display: block;
       margin-top: 0.4rem;
+
+      &.error {
+        color: $red;
+      }
     }
   }
 

@@ -17,11 +17,14 @@ GBValidations =
         $fields = $form.find('*[data-validates]')
         $fields.each ->
           $field = $(this)
+          $note = $field.next('.note')
           $field.removeClass('error')
+          $note.removeClass('error')
           validations = $field.data('validates').split(' ')
           for validation in validations
             unless GBValidations.validateProperty(validation, $field)
               $field.addClass('error')
+              $note.addClass('error')
               $form.addClass('error')
               e.preventDefault()
               valid = false
