@@ -19,6 +19,10 @@ class Signatory < ActiveRecord::Base
   before_save :strip_http
   before_save :strip_tags
 
+  # scopes
+  scope :pending,   -> { where(validated_at: nil) }
+  scope :validated, -> { where.not(validated_at: nil) }
+
   def check_for_max_activity
     unless Signatory.where(ip_address: self.ip_address).where("created_at > :hour_ago", hour_ago: Time.zone.now - 1.hour).count > 100 ||
       Signatory.where(ip_address: self.ip_address).where("created_at > :twentyfour_ago", twentyfour_ago: Time.zone.now - 24.hours).count > 299
