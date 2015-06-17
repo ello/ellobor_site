@@ -7,11 +7,17 @@
     %meta{name: "viewport", content: "width=device-width,initial-scale = 1.0"}
     %meta{name: "description", content: page_meta_description}
     %meta{name: "keywords", content: page_meta_keywords}
+    %meta{name: "author", content: "Ello PBC USA"}
+    %meta{name: "copyright", content: "Ello PBC USA"}
     %meta{name: "web_author", content: "gb Studio (grantblakeman.com)"}
     =render partial: "layouts/fb_meta_tags"
+    =render partial: "layouts/twitter_meta_tags"
     = csrf_meta_tags
 
     %title= site_title
+
+    %link{href: image_url('apple-touch-icon-precomposed.png'), rel: "apple-touch-icon"}
+    %link{href: image_url('apple-touch-icon-precomposed.png'), rel: "apple-touch-icon-precomposed"}
     
     :plain
       <!--[if lt IE 9]>

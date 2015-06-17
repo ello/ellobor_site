@@ -39,11 +39,11 @@ module ApplicationHelper
 
   ## meta / social stuff
   def page_meta_description
-    "Meta description here."
+    "Ello is an ad-free social network leading a revolution in how people connect, where you can be whoever you want to be, and where quality, beauty, and positivity are valued above quantity and statistics."
   end
 
   def page_meta_keywords
-    "keywords, go, here"
+    "Ello, Ello.co, Social Network, Ad-free, No ads, no advertising, message service, data mining, free, instant message, message, messaging, private messaging, text messaging, text post, image post, sound file, video, words, friends, noise, friends and noise, Youtube, Vimeo, Facebook, Tumblr, Twitter, Instagram, App.net, Pinterest, Path"
   end
   ## END meta / social stuff
 
