@@ -2,19 +2,19 @@
   %h2 Share it
 
   %nav.clear
-    = link_to "mailto:?subject=Check%20out%20#{url_encode("#{Secrets.base_site_title}")}&body=#{url_encode("Sign #{Secrets.base_site_title} from #{Secrets.base_company_name}")}%0D%0A%0D%0A#{url_encode(request.original_url)}", class: "email" do
+    = link_to "mailto:?subject=Check%20out%20#{url_encode("#{Secrets.base_site_title}")}&body=#{url_encode("Sign #{Secrets.base_site_title} from #{Secrets.base_company_name}")}%0D%0A%0D%0A#{url_encode(request.original_url)}", class: "email", data: {share_type: "email"} do
       = render partial: "svg/share_box_email.svg"
-    = link_to "https://www.facebook.com/sharer/sharer.php?u=#{url_encode(request.original_url)}", class: "facebook" do
+    = link_to "https://www.facebook.com/sharer/sharer.php?u=#{url_encode(request.original_url)}", class: "facebook", data: {share_type: "facebook"} do
       = render partial: "svg/share_box_facebook.svg"
-    = link_to "https://twitter.com/intent/tweet?text=#{url_encode("Sign #{Secrets.base_site_title} from @#{Secrets.twitter_username}:")}&url=#{url_encode(request.original_url)}&source=#{url_encode(request.original_url)}", class: "twitter" do
+    = link_to "https://twitter.com/intent/tweet?text=#{url_encode("Sign #{Secrets.base_site_title} from @#{Secrets.twitter_username}:")}&url=#{url_encode(request.original_url)}&source=#{url_encode(request.original_url)}", class: "twitter", data: {share_type: "twitter"} do
       = render partial: "svg/share_box_twitter.svg"
-    = link_to "http://pinterest.com/pin/create/button/?url=#{url_encode(request.original_url)}&description=#{url_encode("Sign #{Secrets.base_site_title} from #{Secrets.base_company_name}")}&media=null", class: "pinterest" do
+    = link_to "http://pinterest.com/pin/create/button/?url=#{url_encode(request.original_url)}&description=#{url_encode("Sign #{Secrets.base_site_title} from #{Secrets.base_company_name}")}&media=null", class: "pinterest", data: {share_type: "pinterest"} do
       = render partial: "svg/share_box_pinterest.svg"
-    = link_to "https://plus.google.com/share?url=#{url_encode(request.original_url)}", class: "google" do
+    = link_to "https://plus.google.com/share?url=#{url_encode(request.original_url)}", class: "google", data: {share_type: "google"} do
       = render partial: "svg/share_box_google.svg"
-    = link_to "http://www.tumblr.com/share/link?url=#{url_encode(request.original_url)}&name=#{url_encode("Sign #{Secrets.base_site_title} from #{Secrets.base_company_name}")}", class: "tumblr" do
+    = link_to "http://www.tumblr.com/share/link?url=#{url_encode(request.original_url)}&name=#{url_encode("Sign #{Secrets.base_site_title} from #{Secrets.base_company_name}")}", class: "tumblr", data: {share_type: "tumblr"} do
       = render partial: "svg/share_box_tumblr.svg"
-    = link_to "http://reddit.com/submit?url=#{url_encode(request.original_url)}&title=#{url_encode("Sign #{Secrets.base_site_title} from #{Secrets.base_company_name}")}", class: "reddit" do
+    = link_to "http://reddit.com/submit?url=#{url_encode(request.original_url)}&title=#{url_encode("Sign #{Secrets.base_site_title} from #{Secrets.base_company_name}")}", class: "reddit", data: {share_type: "reddit"} do
       = render partial: "svg/share_box_reddit.svg"
-    = link_to "http://www.linkedin.com/shareArticle?mini=true&url=#{url_encode(request.original_url)}&title=#{url_encode("Sign #{Secrets.base_site_title} from #{Secrets.base_company_name}")}", class: "linkedin" do
+    = link_to "http://www.linkedin.com/shareArticle?mini=true&url=#{url_encode(request.original_url)}&title=#{url_encode("Sign #{Secrets.base_site_title} from #{Secrets.base_company_name}")}", class: "linkedin", data: {share_type: "linkedin"} do
       = render partial: "svg/share_box_linkedin.svg"
