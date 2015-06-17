@@ -102,3 +102,50 @@ body.sign {
   }
 
 }
+
+body.sign {
+  padding: 0;
+  &.verify {
+    #main_content {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      max-width: 100%;
+      @include box_sizing_inset;
+    }
+    .content {
+      margin: 0 auto;
+      @include width_by_layout(3,2);
+      max-width: 600px;
+      height: 100%;
+      h1 {
+        margin: 0 auto;
+        width: percentage(1/3);
+        height: percentage(1/3);
+        @include vertical_align;
+        a {
+          span {
+            &.icon {
+              svg {
+                width: 100%;
+                @include border_radius(100%);
+
+                path {
+                  &.svg__bg {
+                    fill: $black;
+                  }
+                  &.svg__fg {
+                    fill: $white;
+                  }
+                }
+              }
+            }
+            &.label {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

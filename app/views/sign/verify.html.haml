@@ -1,2 +1,5 @@
 %article.content
-  %h1 Verified
+  %h1
+    = link_to root_path do
+      %span.icon= render partial: "svg/ello_icon.svg"
+      %span.label Verifying…
