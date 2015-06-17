@@ -35,6 +35,10 @@ form {
     &.error {
       border-color: $red;
     }
+
+    &:focus {
+      border-color: $grey3;
+    }
   }
 
   span {
