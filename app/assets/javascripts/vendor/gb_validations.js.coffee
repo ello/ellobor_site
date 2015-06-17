@@ -5,9 +5,6 @@ GBValidations =
   init: () ->
     GBValidations.listenForValidations()
 
-  initAjax: () ->
-    GBValidations.listenForValidations()
-
   listenForValidations: ->
     $('form').submit (e) ->
       valid = true # innocent until proven guilty

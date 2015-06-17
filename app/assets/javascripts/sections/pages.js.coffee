@@ -2,9 +2,6 @@ root = exports ? this
 root.ElloBORPages =
   init: () ->
     ElloBORPages.watchShareWidgets()
-
-  initAjax: () ->
-    ElloBORPages.watchShareWidgets()
   
   watchShareWidgets: ->
     $('.share nav a').on "click.share", (e) ->

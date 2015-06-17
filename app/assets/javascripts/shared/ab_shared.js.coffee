@@ -3,14 +3,9 @@ root.ElloBORShared =
   init: () ->
     ElloBORShared.checkMobile()
     ElloBORShared.masterResizeListener()
-    ElloBORShared.backToTop()
-    ElloBORShared.paginationForever()
-    ElloBORShared.developmentModeStuff()
-    ElloBORShared.anchorSwing()
-
-  initAjax: () ->
-    ElloBORShared.paginationForever()
-    ElloBORShared.developmentModeStuff()
+    # ElloBORShared.backToTop()
+    # ElloBORShared.anchorSwing()
+    # ElloBORShared.developmentModeStuff()
 
   developmentModeStuff: ->
     if $('body.development_mode').length
@@ -59,31 +54,6 @@ root.ElloBORShared =
         $("html, body").stop().animate
           scrollTop: (0)
         , 600, "swing"
-
-  paginationForever: ->
-    setTimeout( ->
-      if $('#pagination .pagination').length
-        if $('#pagination .pagination .next a').length
-          $('.load_more').fadeIn('fast')
-        else
-          $('.load_more').fadeOut('fast')
-      else
-        $('.load_more').fadeOut('fast')
-
-      if $('#pagination .pagination').length
-        $('.load_more a').click (e) ->
-          # show loading state
-          $('body').addClass('loading').css('cursor','none')
-          $('#loading_cursor').show()
-          
-          e.preventDefault()
-
-          $("#pagination .pagination .next a").click()
-
-        $(document).on "click", "#pagination .pagination a", ->
-          $.get @href, null, null, "script"
-          false
-    , 250)
 
   anchorSwing: ->
     $('a.anchor_follow').click (e) ->
