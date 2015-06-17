@@ -12,5 +12,13 @@ a, button, input[type=submit] {
     text-transform: uppercase;
     background: none;
     background-color: $black;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $grey5;
+    }
+    &:active {
+      background-color: $grey3;
+    }
   }
 }
