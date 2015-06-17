@@ -25,6 +25,9 @@ class SignController < ApplicationController
     end
   end
 
+  def verify
+  end
+
   private
 
     def signatory_params
