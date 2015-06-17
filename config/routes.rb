@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get "application/unset_development_mode_session_var", to: "application#unset_development_mode_session_var"
   end
 
-  post   "signatories/new",                         to: "signatories#new",                        as: :create_signatory
+  post   "sign/new",                         to: "sign#new",                        as: :create_signatory
 
   # error pages
   get "/404", to: "errors#not_found_404"
