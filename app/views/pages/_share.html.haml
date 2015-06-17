@@ -1,6 +1,20 @@
 %aside.block.share
   %h2 Share it
 
-  %nav
-    = link_to "#email" do
+  %nav.clear
+    = link_to "#email", class: "email" do
       = render partial: "svg/share_box_email.svg"
+    = link_to "#facebook", class: "facebook" do
+      = render partial: "svg/share_box_facebook.svg"
+    = link_to "#twitter", class: "twitter" do
+      = render partial: "svg/share_box_twitter.svg"
+    = link_to "#pinterest", class: "pinterest" do
+      = render partial: "svg/share_box_pinterest.svg"
+    = link_to "#google", class: "google" do
+      = render partial: "svg/share_box_google.svg"
+    = link_to "#tumblr", class: "tumblr" do
+      = render partial: "svg/share_box_tumblr.svg"
+    = link_to "#reddit", class: "reddit" do
+      = render partial: "svg/share_box_reddit.svg"
+    = link_to "#linkedin", class: "linkedin" do
+      = render partial: "svg/share_box_linkedin.svg"
