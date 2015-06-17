@@ -1,0 +1,2 @@
+class ValidationMailer < ApplicationMailer
+end
