@@ -1,5 +1,6 @@
 ## Pretty required
 source 'https://rubygems.org'
+ruby "2.2.2" # for heroku
 gem 'rails', '4.2.1'
 
 ## Our flavor of coding
@@ -68,4 +69,3 @@ end
 # bundle exec rake doc:rails generates the API under doc/api.
 # gem 'sdoc', '~> 0.4.0',          group: :doc
 
-ruby "2.2.2" # for heroku
