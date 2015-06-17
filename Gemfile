@@ -19,7 +19,7 @@ gem "kaminari" # adds pagination to ActiveModels
 ## Engines / Services / API Helpers
 # gem "gibbon" ## for mailchimp
 gem "sidekiq" ## bg processes
-# gem "postmark-rails" ## transaction email
+gem "sendgrid-ruby" ## transaction email
 
 ## Libraries
 gem 'jquery-rails'
@@ -28,7 +28,7 @@ gem "jquery-ui-rails"
 gem 'nokogiri'
 
 group :production do
-  # lock stagin server
+  # lock staging server
   gem 'lockup', '~> 1.3.2.1'
   
   # system tools
