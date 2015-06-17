@@ -1,0 +1,55 @@
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ controls & form standards
+
+form {
+  input,
+  textarea,
+  select,
+  button {
+    @include reset_device_styling;
+  }
+  label {
+    display: none;
+
+    &.inline {
+      display: inline-block;
+    }
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="submit"],
+  textarea {
+    font-size: $bigText;
+    font-family: $bodyNormal;
+    width: 100%;
+    padding-top: 10px;
+    height: 60px;
+    border-bottom: 1px solid $black;
+    background: none;
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    @include box_sizing_inset;
+
+    &.error {
+      border-color: $red;
+    }
+
+    &:focus {
+      border-color: $grey3;
+    }
+  }
+
+  span {
+    &.note {
+      display: block;
+      margin-top: 0.4rem;
+
+      &.error {
+        color: $red;
+      }
+    }
+  }
+
+}

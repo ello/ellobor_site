@@ -1,0 +1,12 @@
+%section.intro
+  %h1 500
+  %h2 Yikes, our server hit a rough spot.
+  %p We’ll look into things.
+  %p
+    Try again from the
+    ="#{link_to "beginning", "/"}?".html_safe
+    -if Secrets.general_email_address.present?
+      %br
+      Or feel free to
+      = link_to "contact us", "mailto:#{Secrets.general_email_address}"
+      about the issue.

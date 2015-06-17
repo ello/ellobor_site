@@ -1,0 +1,24 @@
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ buttons
+
+a, button, input[type=submit] {
+  &.button {
+    width: 100%;
+    height: 60px;
+    color: $white;
+    font-size: 0.75rem;
+    line-height: 60px;
+    text-align: center;
+    font-family: $bodyNormal;
+    text-transform: uppercase;
+    background: none;
+    background-color: $black;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $grey5;
+    }
+    &:active {
+      background-color: $grey3;
+    }
+  }
+}

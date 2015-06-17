@@ -1,0 +1,23 @@
+=form_for :signatory, url: create_signatory_path, html: {class: "column three clear", remote: true} do |form|
+  -if @signatory.present? && @signatory.errors.present?
+    %ul.errors_list
+      = render partial: 'layouts/form_error', collection: @signatory.errors.full_messages, as: :error
+
+  %p
+    =form.label "name"
+    =form.text_field "name", class: "text_field", data: {validates: "presence"}
+    %span.note Your name
+
+  %p
+    =form.label "website"
+    =form.text_field "website", class: "text_field"
+    %span.note Your website (optional)
+
+  %p
+    =form.label "email"
+    =form.email_field "email", class: "text_field", data: {validates: "presence email"}
+    %span.note Your email address (for verfication only*)
+    
+  %p=form.button "Sign the Ello Bill of Rights", class: "button"
+
+  %p.footnote * Your email address will only be used to verify your signature. It will not be shared, or sold to anyone.

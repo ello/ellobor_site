@@ -1,0 +1,47 @@
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ header
+
+header.top {
+  margin: 0 auto;
+  padding: 4.25rem 0 4.25rem 0;
+  width: 100%;
+  max-width: $layoutWidth_px;
+
+  h1 {
+    margin-right: $smallColumn_px;
+    width: 60px;
+    height: 60px;
+    float: left;
+    a {
+      span {
+        &.icon {
+          svg {
+            width: 60px;
+            @include border_radius(60px);
+
+            path {
+              &.svg__bg {
+                fill: $black;
+              }
+              &.svg__fg {
+                fill: $white;
+              }
+            }
+          }
+        }
+        &.label {
+          display: none;
+        }
+      }
+    }
+  }
+
+  h2 {
+    padding-top: 1rem;
+    margin-bottom: 0;
+    font-family: $titleBold;
+    font-size: $bigText;
+    line-height: $bigTextLine;
+    font-weight: 700;
+  }
+
+}
