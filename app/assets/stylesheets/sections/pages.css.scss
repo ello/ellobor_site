@@ -69,6 +69,11 @@ body.pages {
         button {
           margin-top: 60px;
         }
+
+        .footnote {
+          @include width_by_layout(2,1);
+          color: $grey3;
+        }
       }
     }
 
