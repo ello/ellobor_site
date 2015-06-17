@@ -55,6 +55,23 @@ body.pages {
   .block {
     margin-top: 4.25rem;
 
+    &.sign {
+      form {
+        input {
+          margin-bottom: 6px;
+        }
+        span {
+          &.note {
+            position: absolute;
+            margin-top: 0.2rem;
+          }
+        }
+        button {
+          margin-top: 60px;
+        }
+      }
+    }
+
     &.signatories {
       margin-bottom: 4.25rem;
 
