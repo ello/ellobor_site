@@ -9,7 +9,7 @@ class Signatory < ActiveRecord::Base
   # formatting
   validates_uniqueness_of :email
   validates_uniqueness_of :lookup_token
-  validates_format_of :website, with: /\A[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix, message: "Invalid URL", allow_nil: true
+  validates_format_of :website, with: /\A([a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+.*)\z/, message: "Invalid URL", allow_nil: true
   # validates_format_of :email, with: /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix, message: "Invalid Email", allow_nil: false # todo
 
   # light check for troublemakers

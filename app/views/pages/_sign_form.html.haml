@@ -10,7 +10,7 @@
 
   %p
     =form.label "website"
-    =form.text_field "website", class: "text_field"
+    =form.text_field "website", class: "text_field", data: {validates: "url"}
     %span.note Your website (optional)
 
   %p

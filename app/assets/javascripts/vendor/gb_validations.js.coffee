@@ -32,7 +32,7 @@ GBValidations =
       return false if $field.val() == ''
       return true
     else if property == "url"
-      is_url_format = $field.val().match(/^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/)
+      is_url_format = $field.val().match(/(^([a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+.*)$)|(^(http|https):\/\/([a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+.*)$)/)
       is_empty = $field.val() == ''
       return true if is_empty
       return false if !is_url_format
