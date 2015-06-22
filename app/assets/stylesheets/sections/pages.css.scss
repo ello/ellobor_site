@@ -12,6 +12,13 @@ body.sign {
 
   .intro {
     margin-bottom: 4.25rem;
+
+    &.big {
+      font-family: $titleBold;
+      font-size: $bigText;
+      line-height: $bigTextLine;
+      font-weight: 700;
+    }
   }
 
   .points {
