@@ -2,47 +2,4 @@
   %h2 Signatories
 
   %ul.clear
-    %li= link_to "George Washington", "http://giphy.com/search/george-washington", target: "_blank"
-    %li John Adams
-    %li Thomas Jefferson
-    %li= link_to "James Madison", "http://giphy.com/search/james-madison", target: "_blank"
-    %li James Monroe 
-    %li John Quincy Adams 
-    %li Andrew Jackson 
-    %li Martin Van Buren 
-    %li= link_to "William Henry Harrison", "http://giphy.com/search/william-henry-harrison", target: "_blank"
-    %li= link_to "John Tyler", "http://giphy.com/search/john-tyler", target: "_blank"
-    %li= link_to "James K. Polk", "http://giphy.com/search/james-k-polk", target: "_blank"
-    %li= link_to "Zachary Taylor", "http://giphy.com/search/zachary-taylor", target: "_blank"
-    %li Millard Fillmore 
-    %li Franklin Pierce 
-    %li James Buchanan 
-    %li Abraham Lincoln 
-    %li Andrew Johnson 
-    %li Ulysses S. Grant 
-    %li Rutherford B. Hayes 
-    %li= link_to "James Garfield", "http://giphy.com/search/james-garfield", target: "_blank"
-    %li Chester A. Arthur 
-    %li= link_to "Grover Cleveland", "http://giphy.com/search/grover-cleveland", target: "_blank"
-    %li Benjamin Harrison 
-    %li Grover Cleveland
-    %li William McKinley
-    %li Theodore Roosevelt 
-    %li William Howard Taft 
-    %li Woodrow Wilson 
-    %li Warren G. Harding 
-    %li= link_to "Calvin Coolidge", "http://giphy.com/search/calvin-coolidge", target: "_blank"
-    %li= link_to "Herbert Hoover", "http://giphy.com/search/herbert-hoover", target: "_blank"
-    %li Franklin D. Roosevelt 
-    %li Harry S. Truman 
-    %li Dwight D. Eisenhower 
-    %li John F. Kennedy 
-    %li Lyndon B. Johnson 
-    %li= link_to "Richard M. Nixon", "http://giphy.com/search/richard-nixon", target: "_blank"
-    %li Gerald R. Ford 
-    %li James Carter 
-    %li Ronald Reagan 
-    %li George H. W. Bush 
-    %li William J. Clinton
-    %li= link_to "George W. Bush", "http://giphy.com/search/george-w-bush", target: "_blank"
-    %li= link_to "Barack Obama", "http://giphy.com/search/barack-obama", target: "_blank"
+    =render partial: 'signatory', collection: @signatories

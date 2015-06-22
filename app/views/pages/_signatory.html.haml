@@ -1,0 +1,5 @@
+%li
+  -if signatory.website.present?
+    = link_to signatory.name, "http://#{signatory.website}", target: "_blank"
+  -else
+    = signatory.name

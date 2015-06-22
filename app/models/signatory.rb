@@ -29,6 +29,8 @@ class Signatory < ActiveRecord::Base
   scope :active,    -> { where(unsubscribed_at: nil) }                   # emails that have not unsubscribed
   scope :inactive,  -> { where.not(unsubscribed_at: nil) }               # emails that have been unsubscribed
 
+  paginates_per 90
+
   def check_for_max_activity
     unless Signatory.where(ip_address: self.ip_address).where("created_at > :hour_ago", hour_ago: Time.zone.now - 1.hour).count > 100 ||
       Signatory.where(ip_address: self.ip_address).where("created_at > :twentyfour_ago", twentyfour_ago: Time.zone.now - 24.hours).count > 299
