@@ -7,7 +7,7 @@ class SignController < ApplicationController
       params[:signatory][:ip_address] = request.remote_ip
 
       # check for existing email / we will update & re-send verification if it exists
-      existing_signatory = Signatory.where(email: params[:signatory][:email]).first
+      existing_signatory = Signatory.active.where(email: params[:signatory][:email]).first
       if existing_signatory.blank?
         @signatory = Signatory.new(signatory_params)
         if @signatory.valid?
