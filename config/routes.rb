@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post   "sign/new",                       to: "sign#new",                      as: :create_signatory
   # get    "sign/verify/:token",             to: "sign#verify",                   as: :verify_signatory
   get    "sign/verify",                    to: "sign#verify",                   as: :verify_signatory
-  get    "unsubscribe",                    to: "sign#unsubscribe",              as: :unsubscribe_email
+  get    "unsubscribe/:token",             to: "sign#unsubscribe",              as: :unsubscribe_email
 
   # error pages
   get "/404", to: "errors#not_found_404"

@@ -29,7 +29,12 @@ class SignController < ApplicationController
   end
 
   def unsubscribe
-    @email_address = "dude@dude.com"
+    @signatory = Signatory.find_by_lookup_token(params[:token])
+    if @signatory.present?
+      @signatory.update(unsubscribed_at: Time.zone.now)
+    else
+      render_404
+    end
   end
 
   private
