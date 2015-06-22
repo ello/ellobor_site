@@ -42,8 +42,9 @@ class Signatory < ActiveRecord::Base
   private
 
     def send_verification_email
-      if self.verification_email_sent_at.blank?
-        ## send email here
+      if self.verification_sent_at.blank?
+        ## send the email
+        SignMailer.send_verification(self.id).deliver_now
       end
     end
 
