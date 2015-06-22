@@ -248,6 +248,81 @@ body.sign {
   }
 }
 
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($black, 0.8);
+  z-index: 500;
+
+  .modal_content {
+    width: 100%;
+    text-align: center;
+    @include vertical_align;
+
+    p {
+      margin-bottom: $bigText;
+      font-family: $titleBold;
+      font-size: $bigText;
+      line-height: $bigTextLine;
+      font-weight: 700;
+      color: $white;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+  .close_modal {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: 30px;
+    right: 30px;
+    a {
+      display: block;
+      padding-top: 21px;
+      width: 60px;
+      height: 60px;
+      background-color: $black;
+      @include box_sizing_inset;
+      @include border_radius(100%);
+      @include transition_in_out(150ms);
+      span {
+        &.icon {
+          svg {
+            display: block;
+            margin: 0 auto;
+            width: 18px;
+            @include transition_fill(150ms);
+
+            polygon {
+              fill: $white;
+            }
+          }
+        }
+        &.label {
+          display: none;
+        }
+      }
+      &:hover {
+        background-color: $grey3;
+        span {
+          &.icon {
+            svg {
+              polygon {
+                fill: $black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @-webkit-keyframes logoSpin {
 from { -webkit-transform: rotate(0deg); }
 to { -webkit-transform: rotate(360deg); }

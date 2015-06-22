@@ -31,6 +31,9 @@
 
   %body{class: "#{body_class}"}
 
+    -if params[:controller] == "pages" && params[:action] == "index"
+      =render partial: "pages/signed_modal"
+      
     -unless params[:controller] == "sign" && params[:action] == "verify"
       =render partial: "layouts/header"
 
