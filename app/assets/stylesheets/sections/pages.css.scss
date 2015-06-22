@@ -79,8 +79,28 @@ body.sign {
         }
 
         .footnote {
-          @include width_by_layout(2,1);
+          @include width_by_layout(2,2);
           color: $grey3;
+        }
+      }
+
+      .form_holder {
+        margin-bottom: 2.25rem;
+      }
+
+      h2 {
+        a {
+          text-decoration: underline;
+        }
+      }
+      p {
+        &.press {
+          float: right;
+
+          a {
+            color: $grey3;
+            text-decoration: underline;
+          }
         }
       }
     }

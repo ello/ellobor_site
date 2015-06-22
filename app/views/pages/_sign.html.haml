@@ -1,4 +1,9 @@
 %section.block.sign#sign
-  %h2 Sign it
+  %h2 Sign the Bill of Rights
+
   .form_holder
     =render partial: "sign_form"
+
+  %p.press= link_to "Press Inquiries", "https://#{Secrets.parent_url}/wtf/about/press/", target: "_blank"
+  %h2= link_to "Visit Ello", "https://#{Secrets.parent_url}"
+
