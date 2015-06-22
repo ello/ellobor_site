@@ -22,7 +22,6 @@ class Signatory < ActiveRecord::Base
   before_validation :add_lookup_token
   before_validation :strip_http
   before_save :strip_tags
-  after_save :send_verification_email
 
   # scopes
   scope :pending,   -> { where(verified_at: nil, unsubscribed_at: nil) } # active emails that have not been verified
@@ -39,14 +38,11 @@ class Signatory < ActiveRecord::Base
     end
   end
 
-  private
+  def send_verification_email
+    SendVerificationEmailWorker.perform_async(self.id)
+  end
 
-    def send_verification_email
-      if self.verification_sent_at.blank?
-        ## send the email
-        SignMailer.send_verification(self.id).deliver_now
-      end
-    end
+  private
 
     def add_lookup_token
       if self.lookup_token.blank?

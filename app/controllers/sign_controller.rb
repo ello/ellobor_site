@@ -12,6 +12,7 @@ class SignController < ApplicationController
         @signatory = Signatory.new(signatory_params)
         if @signatory.valid?
           @signatory.save
+          @signatory.send_verification_email
         else
           @error = true
         end
@@ -19,6 +20,7 @@ class SignController < ApplicationController
         existing_signatory.update(verification_sent_at: nil, verified_at: nil)
         @signatory = existing_signatory
         @signatory.update(signatory_params)
+        @signatory.send_verification_email
       end
 
       ## set/update info to cookie to reflect previous signing
