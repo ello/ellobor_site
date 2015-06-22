@@ -28,6 +28,10 @@ class SignController < ApplicationController
   def verify
   end
 
+  def unsubscribe
+    @email_address = "dude@dude.com"
+  end
+
   private
 
     def signatory_params

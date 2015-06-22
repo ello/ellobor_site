@@ -31,7 +31,7 @@
 
   %body{class: "#{body_class}"}
 
-    -unless params[:controller] == "sign"
+    -unless params[:controller] == "sign" && params[:action] == "verify"
       =render partial: "layouts/header"
 
     #main_content
