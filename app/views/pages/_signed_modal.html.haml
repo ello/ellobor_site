@@ -1,10 +1,10 @@
-%aside#modal
+%aside#modal{style: 'display:none'}
   %p.close_modal
     = link_to "/" do
       %span.icon= render partial: "svg/x_icon.svg"
       %span.label Close
   .modal_content
-    %p Thank you for signing!
-    %p 
+    %h3 Thank you for signing!
+    %h3 
       Come hang out on
-      = "#{link_to 'Ello', "https://#{Secrets.parent_url}", title: "Ello"}.".html_safe
+      = "#{link_to 'Ello', "https://#{Secrets.parent_url}", title: "Ello", class: "ello_link"}.".html_safe

@@ -10,7 +10,7 @@ root.ElloBORSign =
     , 2100
 
   submitSuccess: ->
-    alert 'we did it!'
+    $('#modal').fadeIn(175)
 
   submitError: (form_html) ->
     $('.sign .form_holder').html(form_html)
