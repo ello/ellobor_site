@@ -7,7 +7,9 @@ class Signatory < ActiveRecord::Base
   validates_presence_of :lookup_token
 
   # formatting
-  validates_format_of :website, with: /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix, message: "Invalid URL", allow_nil: false
+  validates_uniqueness_of :email
+  validates_uniqueness_of :lookup_token
+  validates_format_of :website, with: /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix, message: "Invalid URL", allow_nil: true
   # validates_format_of :email, with: /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix, message: "Invalid Email", allow_nil: false # todo
 
   # light check for troublemakers
@@ -39,7 +41,7 @@ class Signatory < ActiveRecord::Base
 
     def add_lookup_token
       if self.lookup_token.blank? || self.updated_at_changed?
-        self.lookup_token = Digest::SHA256.hexdigest("#{rand(1..9999)}#{self.id}#{self.updated_at}")
+        self.lookup_token = Digest::SHA256.hexdigest("#{rand(1..99999)}#{self.id}#{self.updated_at}")
       end
     end
 
