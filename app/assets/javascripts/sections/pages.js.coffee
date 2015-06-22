@@ -2,6 +2,7 @@ root = exports ? this
 root.ElloBORPages =
   init: () ->
     ElloBORPages.watchShareWidgets()
+    ElloBORPages.watchFormDoubleClick()
   
   watchShareWidgets: ->
     $('.share nav a').on "click.share", (e) ->
@@ -50,6 +51,16 @@ root.ElloBORPages =
         e.preventDefault()
         $('#modal').fadeOut(175)
       e.stopPropagation()
+
+  watchFormDoubleClick: ->
+    $('.form_holder form').submit (e) ->
+      if $(this).hasClass('submitting')
+        return false
+      else
+        $(this).addClass('submitting')
+        setTimeout ->
+          $('.form_holder form').removeClass('submitting')
+        , 1000
   
 $(document).ready ->
   if $("body.pages").length

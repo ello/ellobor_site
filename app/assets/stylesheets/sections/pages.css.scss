@@ -258,7 +258,9 @@ body.sign {
   z-index: 500;
 
   .modal_content {
+    margin: 0 auto;
     width: 100%;
+    max-width: 300px;
     text-align: center;
     @include vertical_align;
 
