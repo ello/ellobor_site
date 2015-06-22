@@ -26,6 +26,12 @@ class SignController < ApplicationController
   end
 
   def verify
+    @signatory = Signatory.find_by_lookup_token(params[:token])
+    if @signatory.present?
+      @signatory.update(verified_at: Time.zone.now)
+    else
+      render_404
+    end
   end
 
   def unsubscribe

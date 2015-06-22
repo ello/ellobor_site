@@ -9,8 +9,7 @@ Rails.application.routes.draw do
   end
 
   post   "sign/new",                       to: "sign#new",                      as: :create_signatory
-  # get    "sign/verify/:token",             to: "sign#verify",                   as: :verify_signatory
-  get    "sign/verify",                    to: "sign#verify",                   as: :verify_signatory
+  get    "sign/verify/:token",             to: "sign#verify",                   as: :verify_signatory
   get    "unsubscribe/:token",             to: "sign#unsubscribe",              as: :unsubscribe_email
 
   # error pages
