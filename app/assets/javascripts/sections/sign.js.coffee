@@ -11,6 +11,7 @@ root.ElloBORSign =
 
   submitSuccess: ->
     $('#modal').fadeIn(175)
+    ElloBORPages.watchModalClose()
 
   submitError: (form_html) ->
     $('.sign .form_holder').html(form_html)

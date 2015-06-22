@@ -2,7 +2,6 @@ root = exports ? this
 root.ElloBORPages =
   init: () ->
     ElloBORPages.watchShareWidgets()
-    ElloBORPages.watchModalClose()
   
   watchShareWidgets: ->
     $('.share nav a').on "click.share", (e) ->
@@ -45,7 +44,8 @@ root.ElloBORPages =
         window.open(link, "shareWindow", "width=#{window_width},height=#{window_height},left=#{offset_left},top=#{offset_top},scrollbars=no,toolbar=0,location=0,menubar=0,directories=0");
 
   watchModalClose: ->
-    $('#modal').click (e) ->
+    $('#modal').off "click.modal"
+    $('#modal').on "click.modal", (e) ->
       unless $(e.target).is('h3') || $(e.target).hasClass('ello_link')
         e.preventDefault()
         $('#modal').fadeOut(175)
