@@ -25,10 +25,10 @@ class Signatory < ActiveRecord::Base
   after_save :send_verification_email
 
   # scopes
-  scope :pending,   -> { where(verified_at: nil, unsubscribed_at: nil) }
-  scope :verified,  -> { where.not(verified_at: nil) }
-  scope :active,    -> { where(unsubscribed_at: nil) }
-  scope :inactive,  -> { where.not(unsubscribed_at: nil) }
+  scope :pending,   -> { where(verified_at: nil, unsubscribed_at: nil) } # active emails that have not been verified
+  scope :verified,  -> { where.not(verified_at: nil) }                   # verified emails (including unsubcribers) - these show on the site as signatories
+  scope :active,    -> { where(unsubscribed_at: nil) }                   # emails that have not unsubscribed
+  scope :inactive,  -> { where.not(unsubscribed_at: nil) }               # emails that have been unsubscribed
 
   def check_for_max_activity
     unless Signatory.where(ip_address: self.ip_address).where("created_at > :hour_ago", hour_ago: Time.zone.now - 1.hour).count > 100 ||
