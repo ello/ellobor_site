@@ -8,6 +8,12 @@ root.ElloBORSign =
     setTimeout ->
       $('.icon').removeClass('animate')
     , 2100
+
+  submitSuccess: ->
+    alert 'we did it!'
+
+  submitError: (form_html) ->
+    $('.sign .form_holder').html(form_html)
   
 $(document).ready ->
   if $("body.sign").length

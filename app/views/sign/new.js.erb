@@ -1,0 +1,8 @@
+<% unless @signatory.errors.present? %>
+  ElloBORSign.submitSuccess()
+<% else %>
+  var form_html;
+
+  form_html = '<%= j render partial: "pages/sign_form" %>';
+  ElloBORSign.submitError(form_html)
+<% end %>

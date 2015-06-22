@@ -2,7 +2,7 @@ class SignController < ApplicationController
 
   # todo - check for repeat signing - update info, resend email
 
-  def sign
+  def new
     if request.xhr?
       params[:signatory][:ip_address] = request.remote_ip
       @signatory = Signatory.new(signatory_params)

@@ -45,10 +45,27 @@ form {
     &.note {
       display: block;
       margin-top: 0.4rem;
+      font-size: 0.75rem; // redefined because field_with_errors
 
       &.error {
         color: $red;
       }
+    }
+  }
+
+  .field_with_errors {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"],
+    textarea {
+      color: $red;
+      border-color: $red;
+    }
+  }
+  .errors_list {
+    li {
+      color: $red;
     }
   }
 
