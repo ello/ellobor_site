@@ -50,8 +50,19 @@ class Signatory < ActiveRecord::Base
 
     def add_lookup_token
       if self.lookup_token.blank?
-        self.lookup_token = Digest::SHA256.hexdigest("#{rand(1..99999)}#{self.id}#{self.email}#{self.updated_at}")
+        proposed_lookup_token = generate_lookup_token
+        begin
+          existing_lookup_token = self.class.find_by_lookup_token(proposed_lookup_token).try(:lookup_token)
+          if existing_lookup_token.present?
+            proposed_lookup_token = generate_lookup_token
+          end
+        end until existing_lookup_token.blank?
+        self.lookup_token = proposed_lookup_token
       end
+    end
+
+    def generate_lookup_token
+      return Digest::SHA256.hexdigest("#{rand(1..99999)}#{self.id}#{self.email}#{self.updated_at}")
     end
 
     def strip_spaces
