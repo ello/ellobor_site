@@ -26,7 +26,7 @@ class Signatory < ActiveRecord::Base
 
   # scopes
   scope :pending,   -> { where(verified_at: nil, unsubscribed_at: nil) }
-  scope :verified,  -> { where.not(verified_at: nil).where(unsubscribed_at: nil) }
+  scope :verified,  -> { where.not(verified_at: nil) }
   scope :active,    -> { where(unsubscribed_at: nil) }
   scope :inactive,  -> { where.not(unsubscribed_at: nil) }
 
