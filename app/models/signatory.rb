@@ -22,6 +22,7 @@ class Signatory < ActiveRecord::Base
   before_validation :add_lookup_token
   before_validation :strip_http
   before_save :strip_tags
+  after_save :send_verification_email
 
   # scopes
   scope :pending,   -> { where(verified_at: nil, unsubscribed_at: nil) }
@@ -40,9 +41,15 @@ class Signatory < ActiveRecord::Base
 
   private
 
+    def send_verification_email
+      if self.verification_email_sent_at.blank?
+        ## send email here
+      end
+    end
+
     def add_lookup_token
       if self.lookup_token.blank?
-        self.lookup_token = Digest::SHA256.hexdigest("#{rand(1..99999)}#{self.id}#{self.updated_at}")
+        self.lookup_token = Digest::SHA256.hexdigest("#{rand(1..99999)}#{self.id}#{self.email}#{self.updated_at}")
       end
     end
 
