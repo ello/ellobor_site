@@ -9,8 +9,8 @@ class Signatory < ActiveRecord::Base
   # formatting
   validates_uniqueness_of :email
   validates_uniqueness_of :lookup_token
-  validates_format_of :website, with: /\A([a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+.*)\z/, message: "Invalid URL", allow_nil: true
-  # validates_format_of :email, with: /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix, message: "Invalid Email", allow_nil: false # todo
+  validates_format_of :website, with: /\A((http|https):\/\/)?[a-zA-Z0-9_+\-(.)?]+\.([a-zA-Z]+)((\/)(.*))?\z/, message: "Invalid URL", allow_nil: true
+  validates_format_of :email, with: /\A[A-Z0-9._+%a-z\-]+@[a-zA-Z0-9._+\-%]+\.([a-zA-Z]+)\z/, message: "Invalid Email", allow_nil: false
 
   # light check for troublemakers
   validate on: :create do
@@ -63,7 +63,7 @@ class Signatory < ActiveRecord::Base
         bare_website = self.website
         bare_website.slice!(/https?:\/\//)
         bare_website = bare_website.gsub(/\/$/,"")
-        self.website = bare_website
+        self.website = bare_website.gsub('..','.')
       end
     end
 

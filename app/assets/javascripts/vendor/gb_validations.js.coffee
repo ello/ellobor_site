@@ -32,16 +32,16 @@ GBValidations =
       return false if $field.val() == ''
       return true
     else if property == "url"
-      is_url_format = $field.val().match(/(^([a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+.*)$)|(^(http|https):\/\/([a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+.*)$)/)
+      is_url_format = $field.val().match(/^((http|https):\/\/)?[a-zA-Z0-9_+\-(.)?]+\.([a-zA-Z]+)((\/)(.*))?$/)
       is_empty = $field.val() == ''
       return true if is_empty
       return false if !is_url_format
       return true
-    else if property == "instagram-url"
-      is_instagram_format = $field.val().match(/^(https?:\/\/)?([\da-z\.-]+)?(instagram)\.([a-z\.]{2,6})([\/\w \.#-]*)*\/?$/)
+    else if property == "email"
+      is_url_format = $field.val().match(/^[A-Z0-9._+%a-z\-]+@[a-zA-Z0-9_+\-%(.)?]+\.([a-zA-Z]+)$/)
       is_empty = $field.val() == ''
       return true if is_empty
-      return false if !is_instagram_format
+      return false if !is_url_format
       return true
 
     console.log("don't have a validation for " + property)
