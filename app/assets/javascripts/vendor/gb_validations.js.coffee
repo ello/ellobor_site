@@ -50,5 +50,4 @@ GBValidations =
 
 window.GBValidations = GBValidations
 $(document).ready ->
-  # GBValidations.init()
-  console.log 'do nothing'
+  GBValidations.init()
