@@ -64,9 +64,16 @@ root.ElloBORPages =
         , 1000
 
   loadInitialSignatories: ->
-    setTimeout ->
-      $('.signatories .loading a').click()
-    , 500
+    $signatories_init_link = $('.signatories .loading')
+    
+    $signatories_init_link.waypoint (e, direction) ->
+      if direction is "down"
+        $signatories_init_link.find('a').click()
+        $signatories_init_link.waypoint('destroy')
+    , {offset: '250%'}
+    # setTimeout ->
+    #   $('.signatories .loading a').click()
+    # , 500
 
   loadMoreSignatories: (signatories_html, next_link_html) ->
     if $('.loading').length
@@ -77,6 +84,17 @@ root.ElloBORPages =
 
     $signatories_list.append(signatories_html).show()
     $next_link.html(next_link_html)
+
+    ElloBORPages.listenForSignatoriesPagination($next_link)
+
+  listenForSignatoriesPagination: ($next_link) ->
+    $footer_anchor = $('footer.bottom')
+    $footer_anchor.waypoint('destroy')
+    $footer_anchor.waypoint (e, direction) ->
+      if direction is "down"
+        $next_link.find('a').click()
+        $footer_anchor.waypoint('destroy')
+    , {offset: '113%'}
   
 $(document).ready ->
   if $("body.pages").length
