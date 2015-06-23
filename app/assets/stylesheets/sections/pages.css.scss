@@ -159,6 +159,8 @@ body.sign {
       ul {
         width: 100%;
         li {
+          display: inline-block;
+          @include truncate_text;
           @include margin_right_by_layout(0,1);
           @include width_by_layout(1,0);
           line-height: $bigTextLine;
@@ -317,6 +319,65 @@ body.sign {
               polygon {
                 fill: $black;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width : 1px) and (max-width : 450px) {
+  body.pages,
+  body.sign {
+
+    .points {
+      li {
+        span {
+          &.bullet {
+            margin-right: 0;
+            width: 90px;
+          }
+          &.point {
+            @include width_by_layout(2,1);
+          }
+          &.content {
+            padding-left: 90px;
+          }
+        }
+      }
+    }
+
+    .block {
+      &.sign {
+        form {
+          .footnote {
+            width: 100%;
+          }
+        }
+      }
+      &.share {
+        nav {
+          a {
+            margin-right: 10px;
+            margin-bottom: 10px;
+            width: 60px;
+          }
+        }
+      }
+      &.signatories {
+        margin-bottom: 4.25rem;
+
+        ul {
+          width: 100%;
+          li {
+            margin-right: 0;
+            width: 50%;
+            padding-right: 5%;
+            @include box_sizing_inset;
+
+            &:nth-child(2n) {
+              padding-right: 0;
             }
           }
         }
