@@ -45,3 +45,16 @@ header.top {
   }
 
 }
+
+@media only screen and (min-width : 1px) and (max-width : 500px) {
+
+  header.top {
+    padding: (4.25rem / 3) 0 (4.25rem / 3) 0;
+
+    h2 {
+      clear: both;
+      float: none;
+    }
+  }
+
+}

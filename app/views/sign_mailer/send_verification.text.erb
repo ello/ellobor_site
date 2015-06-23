@@ -1,0 +1,14 @@
+Thank you for signing the Ello Social Media Bill of Rights
+
+Please confirm your e-mail by clicking the link below:
+
+<%= verification_link(@signatory.lookup_token) %>
+
+
+
+View <%= Secrets.base_site_title %>: <%= ellobor_link %>
+Visit Ello: <%= ello_link %>
+Download the iOS App: <%= ios_app_link %>
+
+
+Unsubscribe: <%= unsubscribe_link(@signatory.lookup_token) %>

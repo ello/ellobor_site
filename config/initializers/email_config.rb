@@ -2,7 +2,7 @@ Rails.application.configure do
   # Set host for devise email
   config.action_mailer.default_url_options = { host: Secrets.app_url }
 
-  if Secrets.mail_catcher.present? && Secrets.mail_catcher
+  if !Rails.env.production? && Secrets.mail_catcher.present? && Secrets.mail_catcher
     config.action_mailer.delivery_method   = :smtp
     config.action_mailer.smtp_settings     = { :address => "localhost", :port => 1025 }
   elsif Secrets.postmark_key.present?

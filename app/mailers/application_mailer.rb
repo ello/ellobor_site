@@ -9,10 +9,6 @@ class ApplicationMailer < ActionMailer::Base
 
   private
 
-  def load_common_preferences
-    @common_preferences = CommonPreferences.first
-  end
-
   def set_defaults
     @cancel_send = false
     @bcc = false

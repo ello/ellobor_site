@@ -2,14 +2,25 @@ class SignController < ApplicationController
 
   # todo - check for repeat signing - update info, resend email
 
-  def sign
+  def new
     if request.xhr?
       params[:signatory][:ip_address] = request.remote_ip
-      @signatory = Signatory.new(signatory_params)
-      if @signatory.valid?
-        @signatory.save
+
+      # check for existing email / we will update & re-send verification if it exists
+      existing_signatory = Signatory.active.where(email: params[:signatory][:email]).first
+      if existing_signatory.blank?
+        @signatory = Signatory.new(signatory_params)
+        if @signatory.valid?
+          @signatory.save
+          @signatory.send_verification_email
+        else
+          @error = true
+        end
       else
-        @error = true
+        existing_signatory.update(verification_sent_at: nil, verified_at: nil)
+        @signatory = existing_signatory
+        @signatory.update(signatory_params)
+        @signatory.send_verification_email
       end
 
       ## set/update info to cookie to reflect previous signing
@@ -26,6 +37,21 @@ class SignController < ApplicationController
   end
 
   def verify
+    @signatory = Signatory.find_by_lookup_token(params[:token])
+    if @signatory.present?
+      @signatory.update(verified_at: Time.zone.now)
+    else
+      render_404
+    end
+  end
+
+  def unsubscribe
+    @signatory = Signatory.find_by_lookup_token(params[:token])
+    if @signatory.present?
+      @signatory.update(unsubscribed_at: Time.zone.now)
+    else
+      render_404
+    end
   end
 
   private

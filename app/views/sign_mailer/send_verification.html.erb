@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html style="background: white">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head>
+<body class="standard" style="background: white; color: black; font-family: 'Courier New', Courier, monospace; font-size: 100%; line-height: 1.5; margin: 0; padding: 60px 0 30px" bgcolor="white">
+<style type="text/css">
+body {
+margin: 0; padding: 60px 0 30px; font-size: 100%; line-height: 1.5; font-family: "Courier New", Courier, monospace;
+}
+.profile-avatars img:hover {
+opacity: 0.8;
+}
+body {
+margin: 0; padding: 60px 0 30px; font-size: 100%; line-height: 1.5; font-family: "Courier New", Courier, monospace;
+}
+.profile-avatars img:hover {
+opacity: 0.8;
+}
+</style>
+<div class="main" style="font-size: 15px; margin: 0 10%">
+<div class="header" style="display: block; margin-bottom: 52px">
+<a href="<%= ellobor_link %>" style="text-decoration: none;"><img alt="ello" height="60" src="https://<%= Secrets.app_url %><%= image_url 'ello.png' %>" width="60"></a>
+</div>
+<div class="content">
+<h1 style="color: black; font-family: 'Helvetica', 'Helvetica Neue', 'HelveticaNeue', 'Arial', sans-serif; font-size: 24px; margin: 0 0 46px; max-width: 350px">
+  Thank you for signing the Ello Social Media Bill of Rights</h1>
+  <h1 style="color: black; font-family: 'Helvetica', 'Helvetica Neue', 'HelveticaNeue', 'Arial', sans-serif; font-size: 24px; margin: 0 0 46px; max-width: 350px">
+    Please confirm your e-mail.</h1>
+</div>
+<div class="actions" style="margin-top: 42px">
+<a class="btn" href="<%= verification_link(@signatory.lookup_token) %>" style="background: black; color: white; display: inline-block; padding: 15px 30px; text-align: center; text-decoration: none; width: 100%; max-width: 350px; text-transform: uppercase;">Confirm It</a>
+</div>
+
+<div class="contentinfo" style="margin-top: 240px">
+<a class="contentinfo-ello" href="<%= ello_link %>" style="color: black; display: inline-block; text-decoration: underline">ello.co</a>
+<a class="contentinfo-settings" href="<%= ios_app_link %>" style="color: black; display: inline-block; margin-left: 18px; text-decoration: underline">download iOS app</a>
+<a class="contentinfo-settings" href="<%= unsubscribe_link(@signatory.lookup_token) %>" style="color: black; display: inline-block; margin-left: 18px; text-decoration: underline">unsubscribe</a>
+</div>
+</div>
+</body>
+</html>

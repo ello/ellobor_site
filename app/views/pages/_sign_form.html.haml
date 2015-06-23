@@ -10,7 +10,7 @@
 
   %p
     =form.label "website"
-    =form.text_field "website", class: "text_field"
+    =form.text_field "website", class: "text_field", data: {validates: "url"}
     %span.note Your website (optional)
 
   %p
@@ -18,6 +18,6 @@
     =form.email_field "email", class: "text_field", data: {validates: "presence email"}
     %span.note Your email address (for verfication only*)
     
-  %p=form.button "Sign the Ello Bill of Rights", class: "button"
+  %p=form.button "Sign It", class: "button"
 
   %p.footnote * Your email address will only be used to verify your signature. It will not be shared, or sold to anyone.
