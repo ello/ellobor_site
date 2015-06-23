@@ -52,7 +52,7 @@ hr.spacer {
   clear: both;
 }
 
-@media only screen and (min-width : 1px) and (max-width : 390px) {
+@media only screen and (min-width : 1px) and (max-width : 500px) {
 
   body {
     padding: ($gutter_px / 2) ($smallColumn_px / 2) 0 ($smallColumn_px / 2);
