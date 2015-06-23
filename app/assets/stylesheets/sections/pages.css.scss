@@ -181,8 +181,8 @@ body.sign {
 }
 
 body.sign {
-  padding: 0;
   &.verify {
+    padding: 0;
     #main_content {
       position: absolute;
       height: 100%;
