@@ -327,19 +327,22 @@ body.sign {
   }
 }
 
-@media only screen and (min-width : 1px) and (max-width : 450px) {
+@media only screen and (min-width : 1px) and (max-width : 500px) {
   body.pages,
   body.sign {
 
+    .intro {
+      margin-bottom: (4.25rem / 2);
+    }
+
     .points {
       li {
+        margin-bottom: (4.25rem / 2);
         span {
           &.bullet {
+            margin-bottom: (2rem / 2);
             margin-right: 0;
             width: 90px;
-          }
-          &.point {
-            @include width_by_layout(2,1);
           }
           &.content {
             padding-left: 90px;
@@ -349,11 +352,15 @@ body.sign {
     }
 
     .block {
+      margin-top: (4.25rem / 2);
       &.sign {
         form {
           .footnote {
             width: 100%;
           }
+        }
+        .form_holder {
+          margin-bottom: (2.25rem / 2);
         }
       }
       &.share {
@@ -379,6 +386,26 @@ body.sign {
             &:nth-child(2n) {
               padding-right: 0;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width : 1px) and (max-width : 390px) {
+  body.pages,
+  body.sign {
+
+    .points {
+      li {
+        span {
+          &.bullet {
+            margin-right: 0;
+            width: 75px;
+          }
+          &.content {
+            padding-left: 75px;
           }
         }
       }
