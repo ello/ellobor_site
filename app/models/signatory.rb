@@ -44,6 +44,10 @@ class Signatory < ActiveRecord::Base
     SendVerificationEmailWorker.perform_async(self.id)
   end
 
+  def block_email
+    self.update(unsubscribed_at: Time.zone.now, verified_at: nil)
+  end
+
   private
 
     def add_lookup_token
