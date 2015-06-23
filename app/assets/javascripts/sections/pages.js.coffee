@@ -3,6 +3,7 @@ root.ElloBORPages =
   init: () ->
     ElloBORPages.watchShareWidgets()
     ElloBORPages.watchFormDoubleClick()
+    ElloBORPages.loadInitialSignatories()
   
   watchShareWidgets: ->
     $('.share nav a').on "click.share", (e) ->
@@ -61,6 +62,21 @@ root.ElloBORPages =
         setTimeout ->
           $('.form_holder form').removeClass('submitting')
         , 1000
+
+  loadInitialSignatories: ->
+    setTimeout ->
+      $('.signatories .loading a').click()
+    , 500
+
+  loadMoreSignatories: (signatories_html, next_link_html) ->
+    if $('.loading').length
+      $('.loading').remove()
+
+    $signatories_list = $('.signatories ul')
+    $next_link = $('.signatories .load_more_link')
+
+    $signatories_list.append(signatories_html).show()
+    $next_link.html(next_link_html)
   
 $(document).ready ->
   if $("body.pages").length

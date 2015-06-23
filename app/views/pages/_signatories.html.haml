@@ -1,5 +1,7 @@
 %section.block.signatories.clear#signatories
   %h2 Signatories
 
-  %ul.clear
-    =render partial: 'signatory', collection: @signatories
+  %ul.clear{style: 'display:none'}
+  %p.load_more_link{style: 'display:none'}
+  
+  %p.loading= link_to "Loading…", load_signatories_path, remote: true

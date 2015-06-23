@@ -1,0 +1,7 @@
+var signatories_html;
+var next_link_html;
+
+signatories_html = "<%= j render partial: 'signatory', collection: @signatories %>";
+next_link_html = "<%=  j link_to_next_page @signatories, 'Load More Signatories', remote: true %>";
+
+ElloBORPages.loadMoreSignatories(signatories_html, next_link_html);
