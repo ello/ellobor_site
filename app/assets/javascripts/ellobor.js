@@ -6,3 +6,4 @@
 //= require ./vendor/waypoints.min
 //= require ./shared
 //= require ./sections
+//= require ./analytics
