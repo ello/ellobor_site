@@ -10,7 +10,10 @@ root.ElloBORPages =
       type = $(this).data('share-type')
       link = $(this).attr('href')
 
-      console.log "share type: #{type}"
+      window.analytics?.track 'share',
+        type: type,
+        link: link
+
       unless type == "email"
         e.preventDefault()
 
