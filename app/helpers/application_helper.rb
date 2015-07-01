@@ -29,7 +29,7 @@ module ApplicationHelper
         "422 – #{base_site_title}"
       end
     else
-      "#{company_name} | #{base_site_title}"
+      "#{base_site_title}"
     end
   end
   
@@ -39,7 +39,7 @@ module ApplicationHelper
 
   ## meta / social stuff
   def page_meta_description
-    "Ello is an ad-free social network leading a revolution in how people connect, where you can be whoever you want to be, and where quality, beauty, and positivity are valued above quantity and statistics."
+    "To encourage an atmosphere of responsibility and transparency, while creating the most positive social network experience, Ello has created this bill of rights for all social network users."
   end
 
   def page_meta_keywords
