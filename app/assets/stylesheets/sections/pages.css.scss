@@ -58,6 +58,15 @@ body.sign {
     font-size: $bigText;
     line-height: $bigTextLine;
     font-weight: 700;
+
+    &.signatories {
+      display: inline-block;
+    }
+    &.stats {
+      display: inline-block;
+      margin-left: 20px;
+      color: #aaa;
+    }
   }
 
   .block {
