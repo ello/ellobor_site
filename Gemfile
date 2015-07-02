@@ -15,31 +15,32 @@ gem 'uglifier', '>= 1.3.0'
 gem 'pg'
 
 ## Helpers
-gem "kaminari" # adds pagination to ActiveModels
+gem 'kaminari' # adds pagination to ActiveModels
 
 ## heroku
-gem "puma"
-gem "foreman"
+gem 'puma'
+gem 'foreman'
 
 ## Engines / Services / API Helpers
-gem "sidekiq" ## bg processes
-gem "sendgrid-ruby" ## transaction email
+gem 'sidekiq' ## bg processes
+gem 'sendgrid-ruby' ## transaction email
 
 ## Libraries
 gem 'jquery-rails'
-gem "jquery-ui-rails"
+gem 'jquery-ui-rails'
 # gem 'jbuilder', '~> 2.0'
 gem 'nokogiri'
 
 group :production do
   # lock staging server
   gem 'lockup', '~> 1.3.2.1'
-  
+
   # system tools
   # gem 'god'
 
   # heroku stuff
   gem 'rails_12factor'
+  gem 'newrelic_rpm'
 end
 
 group :development do
