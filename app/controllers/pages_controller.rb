@@ -4,8 +4,8 @@ class PagesController < ApplicationController
     if cookies[:signatory_info].present?
       signatory_info = ActiveSupport::JSON.decode(cookies[:signatory_info])
       @signatory = Signatory.new(name: signatory_info["name"], website: signatory_info["website"], email: signatory_info["email"])
-      @num_signatures = Signatory.verified.count
     end
+    @num_signatures = Signatory.verified.count
   end
 
   def load_signatories
