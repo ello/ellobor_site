@@ -62,10 +62,10 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $groteskRegular;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
+}
+h1, h2 {
+  letter-spacing: -0.0225em;
 }
 
 p {
@@ -78,7 +78,7 @@ p {
   }
 }
 p, ol, ul, dl {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
 }
 p:empty {
   display: none;
@@ -95,27 +95,23 @@ nav ul, nav ol {
 }
 
 em, i {
-  font-family: $groteskRegular;
   font-style: italic;
-  font-weight: 400;
 }
 em {
   font-style: normal;
   text-transform: uppercase;
-  letter-spacing: -0.03rem;
-  font-size: 0.8rem; // not entirely sure why the size has to go up to look right in all-caps
 }
 
 strong, b {
-  font-family: $groteskRegular;
+  font-family: $groteskBold;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 strong em, em strong, b i, i b, b em, em b, strong i, i strong {
-  font-family: $groteskRegular;
+  font-family: $groteskBold;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 small {
@@ -137,7 +133,7 @@ sub {
 code, pre, blockquote {
   font-family: inherit;
   background-color: #f1f1f1;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
 }
 code, blockquote {
   display: inline-block;
@@ -157,7 +153,6 @@ pre code {
 blockquote {
   padding-top: 0;
   padding-bottom: 0;
-  font-family: $groteskRegular;
   font-style: italic;
 }
 

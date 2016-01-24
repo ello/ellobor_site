@@ -22,6 +22,7 @@ form {
   textarea {
     font-size: $bigText;
     font-family: $groteskRegular;
+    letter-spacing: -0.0225em;
     width: 100%;
     padding-top: 10px;
     height: 60px;
@@ -46,7 +47,7 @@ form {
     &.note {
       display: block;
       margin-top: 0.4rem;
-      font-size: 0.75rem; // redefined because field_with_errors
+      font-size: 0.875rem; // redefined because field_with_errors
 
       &.error {
         color: $red;

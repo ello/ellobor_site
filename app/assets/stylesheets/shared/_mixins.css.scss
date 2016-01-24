@@ -134,6 +134,7 @@ $smallColumn_px:     30px;
   left: percentage((($largeColumn * $largeColumns) + ($smallColumn * $smallColumns)) / (($largeColumn * $largeColumnsDivisor) + ($smallColumn * $smallColumnsDivisor)));
 }
 
+// available shorteners
 @mixin truncate_text() {
   white-space: nowrap;
   overflow: hidden;
