@@ -14,7 +14,7 @@ body.sign {
     margin-bottom: 4.25rem;
 
     &.big {
-      font-family: $titleBold;
+      font-family: $groteskBold;
       font-size: $bigText;
       line-height: $bigTextLine;
       font-weight: 700;
@@ -31,7 +31,7 @@ body.sign {
         &.bullet,
         &.point {
           margin-bottom: 2rem;
-          font-family: $titleBold;
+          font-family: $groteskBold;
           font-size: $bigText;
           line-height: $bigTextLine;
           font-weight: 700;
@@ -54,7 +54,7 @@ body.sign {
   h2 {
     padding-top: 1rem;
     margin-bottom: $bigTextLine;
-    font-family: $titleBold;
+    font-family: $groteskBold;
     font-size: $bigText;
     line-height: $bigTextLine;
     font-weight: 700;
@@ -278,7 +278,7 @@ body.sign {
 
     h3 {
       margin-bottom: $bigText;
-      font-family: $titleBold;
+      font-family: $groteskBold;
       font-size: $bigText;
       line-height: $bigTextLine;
       font-weight: 700;
