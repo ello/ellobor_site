@@ -14,10 +14,9 @@ body.sign {
     margin-bottom: 4.25rem;
 
     &.big {
-      font-family: $titleBold;
       font-size: $bigText;
       line-height: $bigTextLine;
-      font-weight: 700;
+      letter-spacing: -0.0225em;
     }
   }
 
@@ -30,11 +29,9 @@ body.sign {
         display: inline-block;
         &.bullet,
         &.point {
-          margin-bottom: 2rem;
-          font-family: $titleBold;
+          margin-bottom: 1.75rem;
           font-size: $bigText;
           line-height: $bigTextLine;
-          font-weight: 700;
           float: left;
         }
         &.bullet {
@@ -54,10 +51,8 @@ body.sign {
   h2 {
     padding-top: 1rem;
     margin-bottom: $bigTextLine;
-    font-family: $titleBold;
     font-size: $bigText;
     line-height: $bigTextLine;
-    font-weight: 700;
 
     &.signatories {
       display: inline-block;
@@ -278,10 +273,8 @@ body.sign {
 
     h3 {
       margin-bottom: $bigText;
-      font-family: $titleBold;
       font-size: $bigText;
       line-height: $bigTextLine;
-      font-weight: 700;
       color: $white;
 
       a {
