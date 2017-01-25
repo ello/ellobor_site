@@ -1,7 +1,7 @@
 ## Pretty required
 source 'https://rubygems.org'
 ruby "2.2.2" # for heroku
-gem 'rails', '4.2.1'
+gem 'rails', '~> 4.2.5'
 
 ## Our flavor of coding
 gem 'sass-rails', '~> 5.0'
@@ -9,7 +9,7 @@ gem 'haml-rails'
 gem 'coffee-rails', '~> 4.1.0'
 
 ## Post-processors
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '>= 2.7.2'
 
 ## Db stuff
 gem 'pg'
@@ -22,14 +22,14 @@ gem 'puma'
 gem 'foreman'
 
 ## Engines / Services / API Helpers
-gem 'sidekiq' ## bg processes
+gem 'sidekiq', '>= 3.4.0' ## bg processes
 gem 'sendgrid-ruby' ## transaction email
 
 ## Libraries
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 4.0.4'
 gem 'jquery-ui-rails'
 # gem 'jbuilder', '~> 2.0'
-gem 'nokogiri'
+gem 'nokogiri', '>= 1.6.8'
 
 group :production do
   # lock staging server
@@ -59,7 +59,7 @@ group :development do
   gem "awesome_print"
   # gem 'spring' # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'web-console', '~> 2.0' # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '>= 2.1.3' # Access an IRB console on exception pages or by using <%= console %> in views
   ## for sending test email
   gem 'mailcatcher'
 
@@ -75,3 +75,4 @@ end
 # bundle exec rake doc:rails generates the API under doc/api.
 # gem 'sdoc', '~> 0.4.0',          group: :doc
 
+gem 'rails-html-sanitizer', '~> 1.0.3'
