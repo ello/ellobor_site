@@ -1,12 +1,13 @@
 ## Pretty required
 source 'https://rubygems.org'
-ruby "2.2.2" # for heroku
-gem 'rails', '4.2.1'
+ruby '2.3.1' # for heroku
+gem 'rails', '~> 4.2.1'
 
 ## Our flavor of coding
 gem 'sass-rails', '~> 5.0'
 gem 'haml-rails'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'sprockets-rails', '~> 2.3.0'
 
 ## Post-processors
 gem 'uglifier', '>= 1.3.0'
@@ -56,7 +57,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   ## for viewing objects
-  gem "awesome_print"
+  gem 'awesome_print'
   # gem 'spring' # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'web-console', '~> 2.0' # Access an IRB console on exception pages or by using <%= console %> in views
